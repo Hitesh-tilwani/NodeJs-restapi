@@ -9,7 +9,8 @@ app.use(express.static('./public'))
 app.use(morgan('combined'))
 app.use(bodyParser.urlencoded({extended:false}))
 
-
+// mysqllll 
+// commit 
 const connection=getConnection()
 
  connection.connect()
@@ -17,7 +18,7 @@ app.get("/user",(request,response) =>{
    
     //console.log("fetching user with id:"+request.params.id) 
         
-    const queryString="select * from tilu"
+    const queryString="select * from users";
     connection.query(queryString,(err,rows,fields)=>{
         console.log("i think we fetched users successfully");
         console.log(rows)
@@ -66,9 +67,9 @@ app.post('/user_create',(request,response)=>{
 function getConnection()
 {
     return mysql.createConnection({
-        user:'root',
-        host:'localhost',
-        database:'hitesh',
-        password:'12345'
+        user:'u738095806_owlseye',
+        host:'sql471.main-hosting.eu',
+        database:'u738095806_owlseye',
+        password:'Ulluseye$pro%dual5'
     })
 }
